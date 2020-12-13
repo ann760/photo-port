@@ -2,7 +2,7 @@ import React from "react";
 import { capitalizeFirstLetter } from "../../utils/helpers";
 
 function categorySelected(name) {
-    console.log(`${name} clicked`)
+  console.log(`${name} clicked`);
 }
 
 function Nav() {
@@ -23,7 +23,7 @@ function Nav() {
   return (
     <header>
       <h2>
-        <a href="/">
+        <a data-testid="link" href="/">
           <span role="img" aria-label="camera">
             {" "}
             📸
@@ -34,7 +34,7 @@ function Nav() {
       <nav>
         <ul className="flex-row">
           <li className="mx-2">
-            <a href="#about">About me</a>
+            <a data-testid="about" href="#about">About me</a>
           </li>
           <li>
             <span>Contact</span>
@@ -42,7 +42,7 @@ function Nav() {
           {categories.map((category) => (
             <li className="mx-1" key={category.name}>
               <span onClick={() => categorySelected(category.name)}>
-              {capitalizeFirstLetter(category.name)}
+                {capitalizeFirstLetter(category.name)}
               </span>
             </li>
           ))}
